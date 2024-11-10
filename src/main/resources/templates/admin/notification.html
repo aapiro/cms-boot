@@ -16,7 +16,7 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Upozornění</h3>
+                        <h3>Aviso</h3>
                     </div>
                 </div>
 
@@ -30,8 +30,8 @@
                                 <table class="table table-striped projects">
                                     <thead>
                                     <tr>
-                                        <th>Zpráva</th>
-                                        <th>Akce</th>
+                                        <th>Mensaje</th>
+                                        <th>Acción</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -39,8 +39,8 @@
                                         <td th:text="${notification.message}">
                                         </td>
                                         <td>
-                                            <a th:if="${!notification.isRead()}" th:href="@{/admin/notification/read(notificationId=${notification.id})}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Přečíst </a>
-                                            <a th:href="@{/admin/notification/delete(notificationId=${notification.id})}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Odstanit </a>
+                                            <a th:if="${!notification.isRead()}" th:href="@{/admin/notification/read(notificationId=${notification.id})}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Léelo </a>
+                                            <a th:href="@{/admin/notification/delete(notificationId=${notification.id})}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Eliminar </a>
                                         </td>
                                     </tr>
                                     </tbody>
