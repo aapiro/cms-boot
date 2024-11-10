@@ -37,7 +37,6 @@ class PageServiceImpl implements PageService {
         this.pageTextRepository = pageTextRepository;
     }
 
-    // FIXME osetreni
     @Override
     public void savePage(PageForm pageForm) {
         Page page = new Page();
@@ -46,20 +45,15 @@ class PageServiceImpl implements PageService {
 
         Long parentPageId = pageForm.getParentPageId();
 
-        Page parentPage = null;
         if (parentPageId != null) {
-            parentPage = pageRepository.getOne(pageForm.getParentPageId());
-
-            List<Page> subPages = parentPage.getSubPages();
-            subPages.add(page);
-
-            parentPage.setSubPages(subPages);
-            pageRepository.save(parentPage);
+            Page parentPage = pageRepository.findById(parentPageId)
+                    .orElseThrow(() -> new IllegalArgumentException("Parent page not found"));
+            page.setParentPage(parentPage);
+            parentPage.getSubPages().add(page);
         }
-        page.setParentPage(parentPage);
-
         pageRepository.save(page);
     }
+
 
     @Override
     public void savePageText(PageTextForm pageTextForm) {

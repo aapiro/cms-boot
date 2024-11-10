@@ -35,7 +35,8 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-devtools")
     compile  group: 'org.springframework.boot', name:'spring-boot-configuration-processor'
-    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.42'
+//    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.42'
+    implementation 'mysql:mysql-connector-java:8.0.33'
     compile group: 'org.projectlombok', name: 'lombok'
 
     // thymeleaf

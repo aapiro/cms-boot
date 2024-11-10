@@ -17,6 +17,9 @@ public class Notification {
     private Long id;
 
     @Column
+    private String email;
+
+    @Column
     private String message;
 
     @Column

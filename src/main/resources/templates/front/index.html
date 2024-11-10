@@ -18,7 +18,7 @@
                 <li sec:authentication="name"></li>
                 <li sec:authentication="principal.authorities"></li>
             </ul>
-            <image src="file/test.png"></image>
+            <img th:src="@{'file/' + ${pageImages.get('wellcome-image')}}" alt="Welcome Image"></img>
         </div>
     </div>
 </div>

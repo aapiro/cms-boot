@@ -44,7 +44,7 @@ public class ContactController extends FrontAbstractController {
         // TODO send email
 
         // TODO save to notifications
-        notificationService.notify("new contact form sent");
+        notificationService.notify(contactForm.getEmail(),contactForm.getMessage());
 
         return redirect("/contacts");
     }

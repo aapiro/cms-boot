@@ -12,9 +12,10 @@ public interface NotificationService {
     /**
      * Create new notification
      *
-     * @param message text of notification
+     * @param message            text of notification
+     * @param contactFormMessage
      */
-    public void notify(String message);
+    public void notify(String message, String contactFormMessage);
 
     /**
      * Notification is marked as read.

@@ -23,8 +23,9 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @Override
-    public void notify(String message) {
+    public void notify(String email, String message) {
         Notification notification = new Notification();
+        notification.setEmail(email);
         notification.setMessage(message);
         notification.setStatus(NotificationStatus.NEW);
 
